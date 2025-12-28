@@ -87,7 +87,7 @@ const Navbar = () => {
      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="bg-black/95 backdrop-blur-lg flex flex-col gap-3 px-5 py-4">
           {nav_links.map((link) => (
-            <butto
+            <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
               className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
@@ -97,7 +97,7 @@ const Navbar = () => {
               }`}
             >
               {link.label}
-            </butto>
+            </button>
           ))}
           <button
             onClick={() => handleNavClick('contact')}
