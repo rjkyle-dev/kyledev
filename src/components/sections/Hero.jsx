@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown, Star } from 'lucide-react';   
-import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb} from 'react-icons/si'
+import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiDotnet, SiLaravel, SiCss3, SiLaragon, SiHtml5, SiFsharp, SiSharp, SiResharper, SiBootstrap, SiMysql} from 'react-icons/si'
 import {personal_info, stats} from '../../utils/constants'
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
@@ -26,13 +26,13 @@ const Hero = () => {
 
                         <FadeIn delay={100}>
                             <h1 className='text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight'>
-                              React.js | Next.js | Tailwind CSS Developer
+                              Full-Stack | Software Developer
                             </h1>
                         </FadeIn>
 
                         <FadeIn delay={200}>
                             <p className='text-lg text-white/70 max-w-137.5 mb-8'>
-                               Building modern web applications with React, JavaScript, and Tailwind CSS.
+                               Building Modern Web Applications and Software Applications.
                             </p>
                         </FadeIn>
 
@@ -64,8 +64,70 @@ const Hero = () => {
                             </div>
                         </FadeIn>
                     </div>
+
+                    <FadeIn delay={200}>
+                      <div className='relative'>
+                        <div className='relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group'>
+                            <div className='absolute inset-0 rounded-2xl overflow-hidden'>
+                                <div className='absolute -inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin-slow rounded-2xl'></div>
+                            </div>
+
+                            <div className='relative rounded-2xl overflow-hidden m-px h-[calc(100%-2px)]'>
+                                <img 
+                                src="/public/images/profile/profile2.jpg" 
+                                alt="" 
+                                className='w-full h-full object-cover'
+                                />
+                            </div>
+
+                            <div className='absolute bottom-6 left-6 z-20'>
+                                <FadeIn>
+                                    <div className='flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3'>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiReact className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiNextdotjs className='w-full h-full text-primary'/>
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiTailwindcss className='w-full h-full text-primary' />                                        
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiDotnet className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiLaravel className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiLaragon className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiCss3 className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiHtml5 className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiBootstrap className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiMysql className='w-full h-full text-primary' />
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                            </div>
+                        </div>
+                      </div>
+                    </FadeIn>
                 </div>
             </div>
+
+            <button
+              onClick={() => scrollToSection('about')}
+              className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer'
+            >
+                <ChevronDown className='w-8 h-8 text-primary cursor-pointer' />
+            </button>
         </section>
     )
 }

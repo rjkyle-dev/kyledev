@@ -21,13 +21,13 @@ export const social_links = {
 
 export const stats =[
     {
-        label: 'Projects Completed', value:'50+'
+        label: 'Projects Completed', value:'10+'
     },
     {
-        label: 'Technologies', value:'30+'
+        label: 'Technologies', value:'20+'
     },
     {
-        label: 'Years of Experience', value:'5+'
+        label: 'Years of Experience', value:'2+'
     },
 ]
 

@@ -35,7 +35,7 @@ export const useScrollSpy = (sectionIds, offset = 100) => {
     return activeSection;
 };
 
-export const scrollToSection = (sectionId) => {
+export const scrollToSection = (sectionId, offset = 80) => {
     const section = document.getElementById(sectionId);
     if (section) {
         const top = section.offsetTop - offset;

@@ -17,7 +17,7 @@
         -moz-osx-font-smoothing: grayscale;
         background-color: #000000;
         color: #ffffff;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     /* Custom Scrollbar */
@@ -62,6 +62,21 @@
     }
 
     /* Utility Classes */
+
+    .animate-fadeIn{
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .animate-pulse{
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    .animate-spin-slow{
+        animation: spin 8s linear infinite;
+    }
+
+
+
     .line-clamp-2{
         display: -webkit-box;
         -webkit-line-clamp: 2;

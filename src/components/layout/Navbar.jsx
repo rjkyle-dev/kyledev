@@ -101,7 +101,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={() => handleNavClick('contact')}
-            className="w-full px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300 mt-2"
+            className="cursor-pointer w-full px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300 mt-2"
           >
             Hire Me
           </button>
