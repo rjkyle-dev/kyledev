@@ -74,7 +74,7 @@ const Hero = () => {
 
                             <div className='relative rounded-2xl overflow-hidden m-px h-[calc(100%-2px)]'>
                                 <img 
-                                src="/public/images/profile/profile2.jpg" 
+                                src="/images/profile/profile2.jpg" 
                                 alt="" 
                                 className='w-full h-full object-cover'
                                 />
