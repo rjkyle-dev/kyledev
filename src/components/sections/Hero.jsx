@@ -41,7 +41,7 @@ const Hero = () => {
                                 onClick={() => scrollToSection('contact')}
                                 className='inline-flex items-center gap-0 mb-12 group'
                             >
-                                <div className='relative z-10 bg-white text-[#212121] rounded-[17px] px-6.5 py-3.25 text-base font-medium border border-white'>
+                                <div className='cursor-pointer relative z-10 bg-white text-[#212121] rounded-[17px] px-6.5 py-3.25 text-base font-medium border border-white'>
                                     Get in Touch
                                 </div>
                             
@@ -124,9 +124,9 @@ const Hero = () => {
 
             <button
               onClick={() => scrollToSection('about')}
-              className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer'
+              className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-40'
             >
-                <ChevronDown className='w-8 h-8 text-primary cursor-pointer' />
+                <ChevronDown className='w-8 h-8 text-primary' />
             </button>
         </section>
     )

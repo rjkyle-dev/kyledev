@@ -13,7 +13,7 @@ const About = () => {
             name: "React.js", icon: SiReact, color: "#61DAFB"
         },
         {
-            name: "Laravel", icon: SiLaravel, color: "#000000"
+            name: "Laravel", icon: SiLaravel, color: "#FF1F31"
         },
         {
             name: "Tailwindcss", icon: SiTailwindcss, color: "#3178c6"
@@ -33,7 +33,7 @@ const About = () => {
         <RadianGradientBackground variant='about' />
 
         <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='grid grid-cols-1 lg:grid-grid-cols-2 gap-16 items-center mb-20' >
+            <div className='grid grid-cols-2 lg:grid-grid-cols-2 gap-16 items-center mb-20' >
                 <div className='flex flex-col gap-12'>
                     <div className='flex flex-col gap-8'>
                         <FadeIn delay={60}>
@@ -90,23 +90,67 @@ const About = () => {
                     </div>
                 </div>
 
-                <FadeIn>
+                <FadeIn delay={100}>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="col-span-2 relative group">
                             <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300">
                             
                             </div>
                                <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-opacity duration-300'>
-                                  <div>
-                                     <div>
-                                        <Code />
+                                  <div className='flex items-center gap-4'>
+                                     <div className='p-3 bg-primary/10 rounded-xl'>
+                                        <Code className='w-6 h-6 text-primary' />
                                      </div>
-                                     <div>
-                                        <h3>Expertise</h3>
-                                        <p></p>
+                                     <div className='flex-1'>
+                                        <h3 className='text-lg font-semibold text-white mb-2'>Expertise</h3>
+                                        <p className='text-sm text-white/70 leading-relaxed'>Specialized in building scalable web application with modern technology</p>
                                      </div>
                                   </div>
                                </div>
+                            </div>
+
+                            <div className='relative group'>
+                                <div className='absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300'></div>
+                                <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all h-full duration-300 '>
+                                    <div className='p-3 bg-primary/10 rounded-xl w-fit mb-4'>
+                                        <Sparkles className='w-6 h-6 text-primary'/>
+                                    </div>
+                                    <h3 className='text-base font-semibold text-white mb-2'>Clean Code</h3>
+                                    <p className='text-sm text-white/70 leading-relaxed'>Writing maintainable, well-documented code that scales.</p>
+                                </div>
+                            </div>
+
+                            <div className='relative group'>
+                                <div className='absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300'></div>
+                                <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all h-full duration-300 '>
+                                    <div className='p-3 bg-primary/10 rounded-xl w-fit mb-4'>
+                                        <Download className='w-6 h-6 text-primary'/>
+                                    </div>
+                                    <h3 className='text-base font-semibold text-white mb-2'>Performance</h3>
+                                    <p className='text-sm text-white/70 leading-relaxed'>
+                                      Optimizing for speed and efficiency in every projects.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='col-span-2 relative group'>
+                                <div className='absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300'></div>
+                                 <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all h-full duration-300 '>
+                                   <div className='grid grid-cols-3 gap-6 text-center'>
+                                     <div>
+                                         <div className='text-2xl font-bold text-primary mb-1'>100%</div>
+                                         <div className='text-xs text-white/60'>Client Satisfaction</div>
+                                     </div>
+                                     <div>
+                                         <div className='text-2xl font-bold text-primary mb-1'>24/7</div>
+                                         <div className='text-xs text-white/60'>Support Available</div>
+                                     </div>
+                                     <div>
+                                         <div className='text-2xl font-bold text-primary mb-1'>Fast</div>
+                                         <div className='text-xs text-white/60'>Delivery Time</div>
+                                     </div>
+                                   </div>
+                                </div>
                             </div>
                         </div>
 
@@ -114,8 +158,31 @@ const About = () => {
                    
                 </FadeIn>
             </div>
-        </div>
 
+              <FadeIn delay={500}>
+                <div className='flex flex-col items-center gap-8'>
+                    <div className='text-center'>
+                        <h3 className='text-xl font-normal text-white mb-2'>Tech Stack & Expertise</h3>
+                        <p className='text-sm text-white/60'>Technologies I work to build amazing products</p>
+                    </div>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full max-w-4xl'>
+                        {skills.map((skill, index) => (
+                            <div key={index} className='cursor-pointer group relative bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-6 gap-3 hover:border-primary/50  h-full  flex flex-col items-center justify-center transition-all duration-300 hover:scale-105'>
+                                <skill.icon className='text-3xl text-primary' />
+                                <div className='text-sm text-white/80 font-medium text-center'>
+                                    {skill.name}
+                                </div>
+
+                                <div className='absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 rounded-2xl group-hover:from-primary/10 group-hover:to-primary/10 transition-all duration-300'>
+
+                                </div>
+                            </div>
+                        ))}     
+                    </div>
+                </div>
+              </FadeIn>
+
+        </div>
     </section>
 }
 
