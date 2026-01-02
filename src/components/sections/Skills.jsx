@@ -20,13 +20,10 @@ const Skills = () => {
             skills.find(s => s.name === 'HTML5'),
             skills.find(s => s.name === 'Tailwind CSS'),
             skills.find(s => s.name === 'Bootstrap'),
-            skills.find(s => s.name === 'Figma'),
-            skills.find(s => s.name === 'Git'),
-            skills.find(s => s.name === 'GitHub'),
-            skills.find(s => s.name === 'RESTful APIs'),
             skills.find(s => s.name === 'Next.js'),
             skills.find(s => s.name === 'TypeScript'),
             skills.find(s => s.name === 'Redux'),
+            skills.find(s => s.name === 'Inertia'),
         ].filter(Boolean),
         'Backend & API Development': [
             skills.find(s => s.name === 'Node.js'),
@@ -35,6 +32,7 @@ const Skills = () => {
             skills.find(s => s.name === 'MySQL'),
             skills.find(s => s.name === 'Laravel'),
             skills.find(s => s.name === '.NET'),
+            skills.find(s => s.name === 'C#'),
         ].filter(Boolean),
         'Tools & Other Technologies': [
             // Add more skills here as you add them to skills.js
