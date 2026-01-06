@@ -1,43 +1,43 @@
 export const projects = [
     {
         id: 1,
-        title: 'Project One',
-        description: 'This is the first project.',
-        image: 'project1.png',
-        category: 'Web Development',
+        title: '',
+        description: 'This Capstone Project HRIS Biometric System.',
+        image: '/images/projects/image.png',
+        category: 'Full Stack',
         technologies: ['React', 'Node.js', 'CSS'],
         metrics:'1000+ users',
-        demoUrl: 'https://demo.projectone.com',
+        demoUrl: '',
         githubUrl: ''
     },
     {
         id: 2,
-        title: 'Project Two',
-        description: 'This is the second project.',
-        image: 'project2.png',
-        category: 'Web Development',
+        title: '',
+        description: 'Agriyas is a platform for farmers to sell their products.',
+        image: '/images/projects/agriyas.png',
+        category: 'Web Apps',
         technologies: ['React', 'Node.js', 'CSS'],
         metrics:'1000+ users',
-        demoUrl: 'https://demo.projecttwo.com',
-        githubUrl: ''
+        demoUrl: 'agriya-website.vercel.app/index.html',
+        githubUrl: 'https://github.com/rjkyle-dev/Agriya-Website.git'
     },
     {
         id: 3,
-        title: 'Project Three',
-        description: 'This is the third project.',
-        image: 'project3.png',
-        category: 'Web Development',
-        technologies: ['React', 'Node.js', 'CSS'],
+        title: '',
+        description: 'Smart Child is a platform for parents to find the best schools for their children.',
+        image: '/images/projects/smart-child.jpeg',
+        category: 'Full Stack',
+        technologies: ['React', 'Node.js', 'CSS', 'Firebase', 'Vercel'],
         metrics:'1000+ users',
         demoUrl: 'https://demo.projectthree.com',
         githubUrl: ''
     },
     {
         id: 4,
-        title: 'Project Four',
-        description: 'This is the fourth project.',
-        image: 'project4.png',
-        category: 'Web Development',
+        title: '',
+        description: 'Portfolio website for a client.',
+        image: '/images/projects/kyle-portfolio.png',
+        category: 'Web Apps',
         technologies: ['React', 'Node.js', 'CSS'],
         metrics:'1000+ users',
         demoUrl: 'https://demo.projectfour.com',
@@ -45,11 +45,11 @@ export const projects = [
     },
     {
         id: 5,
-        title: 'Project Five',
-        description: 'This is the fifth project.',
-        image: 'project5.png',
-        category: 'Web Development',
-        technologies: ['React', 'Node.js', 'CSS'],
+        title: '',
+        description: 'T-shirt design for a client.',
+        image: '/images/projects/t-shirty.png',
+        category: 'Other Projects',
+        technologies: ['Canva','Photoshop'],
         metrics:'1000+ users',
         demoUrl: 'https://demo.projectfive.com',
         githubUrl: ''
@@ -58,9 +58,8 @@ export const projects = [
 
 export const categories = [
     'All',
-    'Web Development',
-    'Mobile Apps',
-    'Data Science',
-    'Machine Learning',
-    'Game Development'
+    'Web Apps',
+    'Full Stack',
+    'UI Components',
+    'Other Projects'
 ];
