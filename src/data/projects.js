@@ -1,12 +1,12 @@
 export const projects = [
     {
         id: 1,
-        title: '',
-        description: 'This Capstone Project HRIS Biometric System.',
+        title: 'HRIS Biometric Fingerprint Attendance System(IOT)',
+        description: 'This Capstone Project HRIS Biometric Fingerprint Attendance System.',
         image: '/images/projects/image.png',
         category: 'Full Stack',
-        technologies: ['React', 'Node.js', 'CSS'],
-        metrics:'1000+ users',
+        technologies: ['React', 'Node.js', 'CSS', 'Laravel', 'MySQL', 'Inertia.js', 'PHP', 'JavaScript', 'HTML5', 'Tailwind CSS','WebSockets','Axios','JWT','Vite','Gmail API','Csharp','.NET','HID Digital Persona UareU 4500'],
+        metrics:'',
         demoUrl: '',
         githubUrl: ''
     },
@@ -16,8 +16,8 @@ export const projects = [
         description: 'Agriyas is a platform for farmers to sell their products.',
         image: '/images/projects/agriyas.png',
         category: 'Web Apps',
-        technologies: ['React', 'Node.js', 'CSS'],
-        metrics:'1000+ users',
+    technologies: ['HTML','CSS','SCSS','Vercel','JavaScript','Bootstrap','LESS'],
+        metrics:'',
         demoUrl: 'agriya-website.vercel.app/index.html',
         githubUrl: 'https://github.com/rjkyle-dev/Agriya-Website.git'
     },
@@ -28,7 +28,7 @@ export const projects = [
         image: '/images/projects/smart-child.jpeg',
         category: 'Full Stack',
         technologies: ['React', 'Node.js', 'CSS', 'Firebase', 'Vercel'],
-        metrics:'1000+ users',
+        metrics:'',
         demoUrl: 'https://demo.projectthree.com',
         githubUrl: ''
     },
@@ -38,8 +38,8 @@ export const projects = [
         description: 'Portfolio website for a client.',
         image: '/images/projects/kyle-portfolio.png',
         category: 'Web Apps',
-        technologies: ['React', 'Node.js', 'CSS'],
-        metrics:'1000+ users',
+        technologies: ['HTML', 'CSS','JavsaScript'],
+        metrics:'',
         demoUrl: 'https://demo.projectfour.com',
         githubUrl: ''
     },
@@ -50,7 +50,7 @@ export const projects = [
         image: '/images/projects/t-shirty.png',
         category: 'Other Projects',
         technologies: ['Canva','Photoshop'],
-        metrics:'1000+ users',
+        metrics:'20+ users',
         demoUrl: 'https://demo.projectfive.com',
         githubUrl: ''
     }
