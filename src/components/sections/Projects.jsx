@@ -87,7 +87,7 @@ const Projects = () => {
                            <div className={`absolute inset-0  rounded-full  transition-all duration-300 ${activeCategory === category ? 'bg-primary/10 opacity-100' : 'bg-white/5 border border-white/10 group-hover:bg-white/10'}`}/>
 
                            <div className='relative flex items-center gap-1.5 sm:gap-2'>
-                           {React.createElement(categoryIcons[category], { className: 'w-3.5 h-3.5 sm:w-4 sm:h-4' })}
+                           {React.createElement(categoryIcons[category], { className: 'w-3.5 h-3.5 sm:w-20 sm:h-4' })}
                              <span className='text-xs sm:text-sm'>{category}</span>
                            </div>
 
