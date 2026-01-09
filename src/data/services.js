@@ -30,4 +30,4 @@ export const services = [
         title: 'Cloud Services',
         description: 'Offering cloud integration and deployment solutions.'
     },
-];
+]; 

@@ -81,14 +81,14 @@ const Projects = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-                <div className='flex items-center justify-center gap-3 mb-16'>
+                <div className='flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 sm:mb-16 px-2'>
                     {categories.map((category) => (
-                        <button key={category} onClick={() => handleCategoryChange(category)} className={`group relative px-6 py-3 font-medium rounded-full transition-all duration-300 ${activeCategory === category ? 'text-white' : 'text-white/60 hover:text-white'}`}>
+                        <button key={category} onClick={() => handleCategoryChange(category)} className={`group relative px-4 py-2 sm:px-6 sm:py-3 font-medium rounded-full transition-all duration-300 ${activeCategory === category ? 'text-white' : 'text-white/60 hover:text-white'}`}>
                            <div className={`absolute inset-0  rounded-full  transition-all duration-300 ${activeCategory === category ? 'bg-primary/10 opacity-100' : 'bg-white/5 border border-white/10 group-hover:bg-white/10'}`}/>
 
-                           <div className='relative flex items-center gap-2'>
-                           {React.createElement(categoryIcons[category], { className: 'w-4 h-4' })}
-                             <span className='text-sm'>{category}</span>
+                           <div className='relative flex items-center gap-1.5 sm:gap-2'>
+                           {React.createElement(categoryIcons[category], { className: 'w-3.5 h-3.5 sm:w-4 sm:h-4' })}
+                             <span className='text-xs sm:text-sm'>{category}</span>
                            </div>
 
                            {activeCategory === category && (

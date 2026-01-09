@@ -33,11 +33,11 @@ const About = () => {
         <RadianGradientBackground variant='about' />
 
         <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='grid grid-cols-2 lg:grid-grid-cols-2 gap-16 items-center mb-20' >
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20' >
                 <div className='flex flex-col gap-12'>
                     <div className='flex flex-col gap-8'>
                         <FadeIn delay={60}>
-                          <div className='inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit'>
+                          <div className='inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit mx-auto lg:mx-0'>
                              <Code2 className='w-4 h-4 text-primary'/>
                              <span className='text-sm text-primary font-medium'>
                                 Full-Stack Developer
@@ -47,7 +47,7 @@ const About = () => {
                         </FadeIn>
 
                         <FadeIn delay={100}>
-                            <h2 className='text-4xl lg:text-5xl font-normal text-white leading-tight'>
+                            <h2 className='text-4xl lg:text-5xl font-normal text-white leading-tight text-center lg:text-left'>
                                 Crafting Digital Experiences That Matter
                             </h2>
                         </FadeIn>
@@ -55,7 +55,7 @@ const About = () => {
                         <FadeIn delay={200}>
                             <div className='flex flex-col gap-4'>
                                 {personal_info.bio.map((paragraph, index) =>
-                                  <p key={index} className='text-base text-white/70 leading-relaxed'>
+                                  <p key={index} className='text-base text-white/70 leading-relaxed text-center lg:text-left'>
                                     {paragraph}
                                   </p>
                                 )}
@@ -63,14 +63,14 @@ const About = () => {
                         </FadeIn>
 
                         <FadeIn delay={300}>
-                            <div className='grid grid-cols-3 gap-8'>
+                            <div className='grid grid-cols-3 gap-8 justify-center lg:justify-start'>
                                 {about_stats.map((stat, index) =>
                                   <div key={index} className='relative'>
-                                    <div className='absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-primary via-primary/50 to-primary/20 rounded-full'></div>
-                                    <div className='text-3xl font-normal text-white mb-2 font-mono'>
+                                    <div className='absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-primary via-primary/50 to-primary/20 rounded-full hidden lg:block'></div>
+                                    <div className='text-3xl font-normal text-white mb-2 font-mono text-center lg:text-left'>
                                         {stat.value}
                                     </div>
-                                    <p className='text-sm text-white/60 leading-snug'>
+                                    <p className='text-sm text-white/60 leading-snug text-center lg:text-left'>
                                         {stat.label}
                                     </p>
                                   </div>
@@ -78,15 +78,17 @@ const About = () => {
                             </div>
                         </FadeIn>
 
-                        <FadeIn delay={400}>
-                            <button
-                              onClick={() => window.open(personal_info.resume, '_blank')}
-                              className='inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
-                            >
-                             <Download className='w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
-                             Download Resume
-                            </button>
-                        </FadeIn>
+                        <div className="hidden lg:block">
+                            <FadeIn delay={400}>
+                                <button
+                                  onClick={() => window.open(personal_info.resume, '_blank')}
+                                  className='inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
+                                >
+                                 <Download className='w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
+                                 Download Resume
+                                </button>
+                            </FadeIn>
+                        </div>
                     </div>
                 </div>
 
@@ -153,9 +155,19 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
+                </FadeIn>
+            </div>
 
-                        
-                   
+            {/* Download Resume Button - Mobile Only (shown after grid) */}
+            <div className="lg:hidden flex justify-center mt-6">
+                <FadeIn delay={400}>
+                    <button
+                      onClick={() => window.open(personal_info.resume, '_blank')}
+                      className='inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
+                    >
+                     <Download className='w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
+                     Download Resume
+                    </button>
                 </FadeIn>
             </div>
 
