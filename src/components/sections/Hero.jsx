@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown, Star } from 'lucide-react';   
-import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiDotnet, SiLaravel, SiCss3, SiLaragon, SiHtml5, SiFsharp, SiSharp, SiResharper, SiBootstrap, SiMysql} from 'react-icons/si'
+import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiDotnet, SiLaravel, SiCss3, SiLaragon, SiHtml5, SiFsharp, SiSharp, SiResharper, SiBootstrap, SiMysql, SiPhp, SiPython} from 'react-icons/si'
 import {personal_info, stats} from '../../utils/constants'
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
@@ -99,6 +99,9 @@ const Hero = () => {
                                             <SiLaravel className='w-full h-full text-primary' />
                                         </div>
                                         <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiPython className='w-full h-full text-primary' />
+                                        </div>
+                                        {/* <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
                                             <SiLaragon className='w-full h-full text-primary' />
                                         </div>
                                         <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
@@ -109,6 +112,12 @@ const Hero = () => {
                                         </div>
                                         <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
                                             <SiBootstrap className='w-full h-full text-primary' />
+                                        </div> */}
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiPhp className='w-full h-full text-primary' />
+                                        </div>
+                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                            <SiNodedotjs className='w-full h-full text-primary' />
                                         </div>
                                         <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
                                             <SiMysql className='w-full h-full text-primary' />
