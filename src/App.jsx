@@ -8,7 +8,8 @@ import Services from './components/sections/Services'
 import BackToTop from './components/ui/BackToTop'
 import ChatButton from './components/ui/ChatButton'
 import Testimonials from './components/sections/Testimonials'
-
+import Contact from './components/sections/Contact'
+import Footer from './components/layout/Footer'
 
 const App = () => {
  return (
@@ -22,8 +23,10 @@ const App = () => {
         <Projects />
         <Services />
         <Testimonials />
+        <Contact />
       </main>
 
+      <Footer />
       <BackToTop />
       <ChatButton />
    </div>

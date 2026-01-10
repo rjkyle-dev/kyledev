@@ -16,7 +16,8 @@ location: "Panabo City, Davao del Norte, Philippines",
 
 export const social_links = {
     linkedin: "https://www.linkedin.com/in/kyledev",
-    github: "https://github.com/kyledev"
+    github: "https://github.com/rjkyle-dev",
+    facebook: "https://www.facebook.com/share/1NKr7eJNT2/",
 };
 
 export const stats =[
