@@ -5,7 +5,7 @@ export const personal_info = {
     phone: "+639206610474",
 location: "Panabo City, Davao del Norte, Philippines",
     tagline: "Building innovative web solutions.",
-    resume:"RiKeyLine.pdf",
+    resume:"/doc/CV-Labrador.pdf",
     bio:[
         "Passionate Full Stack Developer with 5 years of experience in building dynamic web applications.",
         "Skilled in JavaScript, React, Node.js, and Python, with a strong focus on responsive design and user experience.",

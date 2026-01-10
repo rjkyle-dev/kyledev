@@ -82,9 +82,9 @@ const About = () => {
                             <FadeIn delay={400}>
                                 <button
                                   onClick={() => window.open(personal_info.resume, '_blank')}
-                                  className='inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
+                                  className='cursor-pointer inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
                                 >
-                                 <Download className='w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
+                                 <Download className='cursor-pointer w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
                                  Download Resume
                                 </button>
                             </FadeIn>
