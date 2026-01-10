@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Star } from 'lucide-react';   
+import { ChevronDown, Star,MapPin } from 'lucide-react';   
 import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiDotnet, SiLaravel, SiCss3, SiLaragon, SiHtml5, SiFsharp, SiSharp, SiResharper, SiBootstrap, SiMysql, SiPhp, SiPython} from 'react-icons/si'
 import {personal_info, stats} from '../../utils/constants'
 import { scrollToSection } from '../../hooks/useScrollSpy';
@@ -17,7 +17,7 @@ const Hero = () => {
                     <div className='text-left'>
                         <FadeIn delay={0}>
                             <div className='inline-flex items-center gap-2.5 px-4.5 py-2.75 mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full'>
-                                <Star className='w-4 h-4 text-white fill-white'/>
+                                <MapPin className='w-4 h-4 text-white '/>
                                 <span className='text-xs md:text-sm text-white tracking-[1.2px]'>
                                     {personal_info.role} | Base in {personal_info.location}
                                 </span>

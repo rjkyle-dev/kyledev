@@ -3,7 +3,7 @@ export const personal_info = {
     title: "Full Stack Developer",
     email: "rjkylegepolongcalabrador@gmail.com",
     phone: "+639206610474",
-    location: "City, Country",
+location: "Panabo City, Davao del Norte, Philippines",
     tagline: "Building innovative web solutions.",
     resume:"RiKeyLine.pdf",
     bio:[

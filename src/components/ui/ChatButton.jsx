@@ -196,21 +196,53 @@ const ChatButton = () => {
         };
     }, []);
 
+    // Ensure button stays fixed on mobile during scroll
+    // This effect only runs to ensure proper fixed positioning on mobile devices
+    useEffect(() => {
+        if (!buttonRef.current) return;
+        
+        // On mobile, add additional CSS properties to ensure fixed positioning works
+        const isMobile = window.innerWidth < 640;
+        if (isMobile) {
+            const button = buttonRef.current;
+            // Ensure position is always fixed on mobile
+            button.style.position = 'fixed';
+            button.style.willChange = 'transform';
+        }
+    }, [position]);
+
     // Calculate button position - use saved position if available, otherwise use default
+    // Always use position: fixed to keep it relative to viewport, especially on mobile
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
     const buttonStyle = position.x !== null && position.y !== null
         ? {
+            position: 'fixed',
             left: `${position.x}px`,
             top: `${position.y}px`,
             right: 'auto',
             bottom: 'auto',
             cursor: isDragging ? 'grabbing' : 'grab',
             transition: isDragging ? 'none' : 'all 0.3s',
+            transform: 'translateZ(0)', // Force hardware acceleration on mobile
+            WebkitTransform: 'translateZ(0)', // Safari fix
+            willChange: isMobile ? 'transform' : 'auto',
+            backfaceVisibility: 'hidden', // Prevent flickering on mobile
         }
         : {
-            bottom: '1.5rem',
-            right: '5rem',
+            position: 'fixed',
+            // On mobile, always use explicit values to ensure fixed positioning works
+            ...(isMobile ? {
+                bottom: '1.5rem',
+                right: '5rem',
+                left: 'auto',
+                top: 'auto',
+            } : {}),
             cursor: isDragging ? 'grabbing' : 'grab',
             transition: isDragging ? 'none' : 'all 0.3s',
+            transform: 'translateZ(0)', // Force hardware acceleration on mobile
+            WebkitTransform: 'translateZ(0)', // Safari fix
+            willChange: isMobile ? 'transform' : 'auto',
+            backfaceVisibility: 'hidden', // Prevent flickering on mobile
         };
 
     // Disable floating animation when dragging
@@ -224,7 +256,7 @@ const ChatButton = () => {
                 onTouchStart={handleTouchStart}
                 onClick={toggleChat}
                 style={buttonStyle}
-                className={`fixed ${position.x === null ? 'sm:bottom-8 sm:right-24' : ''} ${isOpen ? 'z-[1002]' : 'z-40'} p-3 sm:p-4 bg-black/60 backdrop-blur-sm border border-primary/30 rounded-full shadow-lg hover:bg-black/80 hover:border-primary hover:scale-110 active:scale-95 ${animationClass} select-none`}
+                className={`${position.x === null && !isMobile ? 'sm:bottom-8 sm:right-24' : ''} ${isOpen ? 'z-[1002]' : 'z-40'} p-3 sm:p-4 bg-black/60 backdrop-blur-sm border border-primary/30 rounded-full shadow-lg hover:bg-black/80 hover:border-primary hover:scale-110 active:scale-95 ${animationClass} select-none`}
                 aria-label="Open chat"
             >
                 {isOpen ? (
