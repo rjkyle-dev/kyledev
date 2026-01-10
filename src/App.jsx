@@ -7,6 +7,7 @@ import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
 import BackToTop from './components/ui/BackToTop'
 import ChatButton from './components/ui/ChatButton'
+import Testimonials from './components/sections/Testimonials'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Services />
+        <Testimonials />
       </main>
 
       <BackToTop />

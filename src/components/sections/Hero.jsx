@@ -36,7 +36,7 @@ const Hero = () => {
                             </p>
                         </FadeIn>
 
-                        <FadeIn delay={300} className='sm:mx-auto'>
+                        <FadeIn delay={300} className='ml-auto sm:ml-0 sm:flex-end sm:justify-end'>
                             <button
                                 onClick={() => scrollToSection('contact')}
                                 className='inline-flex items-center gap-0 mb-12 group'
