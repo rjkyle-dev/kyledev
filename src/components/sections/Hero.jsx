@@ -80,9 +80,9 @@ const Hero = () => {
                                 />
                             </div>
 
-                            <div className='absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20 right-3 sm:right-auto'>
+                            <div className='absolute bottom-3 right-3 sm:bottom-6 sm:left-6 sm:right-auto z-20'>
                                 <FadeIn>
-                                    <div className='flex items-center gap-2 sm:gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2 sm:px-6 sm:py-3 overflow-x-auto hide-scrollbar max-w-full'>
+                                    <div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-3 sm:px-6 sm:py-3 max-w-full'>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiReact className='w-full h-full text-primary' />
                                         </div>

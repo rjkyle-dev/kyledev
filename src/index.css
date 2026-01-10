@@ -53,18 +53,30 @@
 
     /* Animation Keyframes */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(10px); }
     }
     @keyframes pulse {
         0%, 100% { opacity: 0.3; }
         50% { opacity: 0.5; }
     }
+    @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
 
     /* Utility Classes */
 
     .animate-fadeIn{
-        animation: fadeIn 0.5s ease-out;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    .animate-fadeOut{
+        animation: fadeOut 0.3s ease-in;
     }
 
     .animate-pulse{
@@ -73,6 +85,10 @@
 
     .animate-spin-slow{
         animation: spin 8s linear infinite;
+    }
+
+    .animate-floating{
+        animation: floating 3s ease-in-out infinite;
     }
 
 

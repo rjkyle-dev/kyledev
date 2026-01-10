@@ -5,6 +5,8 @@ import About from './components/sections/About'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
+import BackToTop from './components/ui/BackToTop'
+import ChatButton from './components/ui/ChatButton'
 
 
 const App = () => {
@@ -19,6 +21,9 @@ const App = () => {
         <Projects />
         <Services />
       </main>
+
+      <BackToTop />
+      <ChatButton />
    </div>
 );
 };
