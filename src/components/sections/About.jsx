@@ -159,7 +159,7 @@ const About = () => {
             </div>
 
             {/* Download Resume Button - Mobile Only (shown after grid) */}
-            <div className="lg:hidden flex justify-center mt-6">
+            <div className="lg:hidden flex justify-center -mt-14">
                 <FadeIn delay={400}>
                     <button
                       onClick={() => window.open(personal_info.resume, '_blank')}
@@ -172,7 +172,7 @@ const About = () => {
             </div>
 
               <FadeIn delay={500}>
-                <div className='flex flex-col items-center gap-8'>
+                <div className='flex flex-col items-center gap-8 mt-10'>
                     <div className='text-center'>
                         <h3 className='text-xl font-normal text-white mb-2'>Tech Stack & Expertise</h3>
                         <p className='text-sm text-white/60'>Technologies I work to build amazing products</p>
