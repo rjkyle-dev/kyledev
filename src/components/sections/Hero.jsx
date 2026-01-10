@@ -80,46 +80,46 @@ const Hero = () => {
                                 />
                             </div>
 
-                            <div className='absolute bottom-6 left-6 z-20'>
+                            <div className='absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20 right-3 sm:right-auto'>
                                 <FadeIn>
-                                    <div className='flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3'>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                    <div className='flex items-center gap-2 sm:gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2 sm:px-6 sm:py-3 overflow-x-auto hide-scrollbar max-w-full'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiReact className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiNextdotjs className='w-full h-full text-primary'/>
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiTailwindcss className='w-full h-full text-primary' />                                        
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiDotnet className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiLaravel className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiPython className='w-full h-full text-primary' />
                                         </div>
-                                        {/* <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        {/* <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiLaragon className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiCss3 className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiHtml5 className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiBootstrap className='w-full h-full text-primary' />
                                         </div> */}
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiPhp className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiNodedotjs className='w-full h-full text-primary' />
                                         </div>
-                                        <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                                        <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiMysql className='w-full h-full text-primary' />
                                         </div>
                                     </div>
