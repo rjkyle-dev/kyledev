@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Expand, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 
@@ -120,6 +120,17 @@ const AchievementGalleryModal = ({
     setViewingImage({ src, alt });
   }, []);
 
+  const goToPrevious = useCallback(() => {
+    if (currentIndex > 0) scrollToIndex(currentIndex - 1);
+  }, [currentIndex, scrollToIndex]);
+
+  const goToNext = useCallback(() => {
+    if (currentIndex < images.length - 1) scrollToIndex(currentIndex + 1);
+  }, [currentIndex, images.length, scrollToIndex]);
+
+  const canGoPrevious = currentIndex > 0;
+  const canGoNext = currentIndex < images.length - 1;
+
   useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -128,13 +139,24 @@ const AchievementGalleryModal = ({
         } else {
           onClose();
         }
+        return;
+      }
+
+      if (!isOpen || viewingImage || images.length <= 1) return;
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goToPrevious();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goToNext();
       }
     };
 
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isOpen, onClose, viewingImage]);
+  }, [isOpen, onClose, viewingImage, images.length, goToPrevious, goToNext]);
 
   useOutsideClick(containerRef, () => {
     if (isOpen) onClose();
@@ -196,6 +218,29 @@ const AchievementGalleryModal = ({
             </div>
 
             <div className="relative w-full">
+              {images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={goToPrevious}
+                    disabled={!canGoPrevious}
+                    aria-label="Previous image"
+                    className="absolute left-2 top-[7rem] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-primary/20 disabled:pointer-events-none disabled:opacity-30 sm:left-3 sm:top-[8.5rem] sm:h-11 sm:w-11 md:top-[9.5rem]"
+                  >
+                    <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goToNext}
+                    disabled={!canGoNext}
+                    aria-label="Next image"
+                    className="absolute right-2 top-[7rem] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:bg-primary/20 disabled:pointer-events-none disabled:opacity-30 sm:right-3 sm:top-[8.5rem] sm:h-11 sm:w-11 md:top-[9.5rem]"
+                  >
+                    <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                  </button>
+                </>
+              )}
+
               <div
                 ref={scrollContentRef}
                 onScroll={handleScroll}
@@ -215,21 +260,26 @@ const AchievementGalleryModal = ({
               </div>
 
               {images.length > 1 && (
-                <div className="flex items-center gap-2 justify-center mt-6">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      onClick={() => scrollToIndex(index)}
-                      aria-label={`Go to image ${index + 1}`}
-                      aria-current={index === currentIndex ? 'true' : undefined}
-                      className={`rounded-full transition-all duration-300 ${
-                        index === currentIndex
-                          ? 'bg-primary w-6 h-2'
-                          : 'bg-white/30 w-2 h-2 hover:bg-white/50'
-                      }`}
-                    />
-                  ))}
+                <div className="mt-6 flex flex-col items-center gap-4">
+                  <p className="text-sm text-white/50">
+                    {currentIndex + 1} / {images.length}
+                  </p>
+                  <div className="flex items-center gap-2 justify-center">
+                    {images.map((_, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        onClick={() => scrollToIndex(index)}
+                        aria-label={`Go to image ${index + 1}`}
+                        aria-current={index === currentIndex ? 'true' : undefined}
+                        className={`rounded-full transition-all duration-300 ${
+                          index === currentIndex
+                            ? 'bg-primary w-6 h-2'
+                            : 'bg-white/30 w-2 h-2 hover:bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

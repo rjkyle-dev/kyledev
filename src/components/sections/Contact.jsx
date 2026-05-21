@@ -100,7 +100,7 @@ const Contact = () => {
 
                             {status.message && (
                                 <div className={`p-4 rounded-xl ${status.type === 'success' 
-                                    ? 'text-green-400 bg-green-500/10 border border-green-500/20' 
+                                    ? 'text-primary bg-primary/10 border border-primary/20' 
                                 : 'text-red-400 bg-red-500/10 border border-red-500/20'}`}>
                                     {status.message}
                                 </div>
@@ -129,7 +129,7 @@ const Contact = () => {
                                     </div>   
                                     <div className='flex-1'>
                                         <p className='text-sm mb-1 text-white/60'>Email</p>
-                                        <a href={`mailto:${personal_info.email}`} className='text-white hover:text-[#A8FF8D] transition-colors font-medium'>
+                                        <a href={`mailto:${personal_info.email}`} className='text-white hover:text-primary transition-colors font-medium'>
                                             {personal_info.email}
                                         </a>
                                     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {skills} from '../../data/skills';
+import { useTheme } from '../../context/ThemeContext';
 import * as Icons from 'lucide-react';   
 // import * as Icons from 'react-icons/si';   
 import {SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiDotnet, SiLaravel, SiCss3, SiLaragon, SiHtml5, SiFsharp, SiSharp, SiResharper, SiBootstrap, SiMysql, SiTypescript} from 'react-icons/si'
@@ -11,6 +12,7 @@ import RadianGradientBackground from '../background/RadialGradientBackground';
 
 
 const Skills = () => {
+    const { isMonochrome } = useTheme();
 
     const skillsCategories = {
         'Frontend Development': [
@@ -53,10 +55,18 @@ const Skills = () => {
 };
 
     const getLevelColor = (level) => {
+        if (isMonochrome) {
+            const mono = {
+                Expert: 'text-primary bg-primary/20 border-primary/40',
+                Advanced: 'text-white/80 bg-white/10 border-white/25',
+                Intermediate: 'text-white/60 bg-white/5 border-white/15',
+            };
+            return mono[level] || 'text-white/50 bg-white/5 border-white/10';
+        }
         const colors = {
-            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/90',
-            'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
-            'Intermediate': 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
+            Expert: 'text-primary bg-primary/20 border-primary/50',
+            Advanced: 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
+            Intermediate: 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
         };
         return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
     }

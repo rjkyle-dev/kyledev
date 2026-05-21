@@ -1,22 +1,42 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {Code, Menu, X} from 'lucide-react'
 import {nav_links, personal_info} from '../../utils/constants'
 import {useScrollSpy, scrollToSection} from '../../hooks/useScrollSpy'
+import ThemeToggle from '../ui/ThemeToggle'
 
 
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const [isNavVisible, setIsNavVisible] = useState(true)
+    const lastScrollY = useRef(0)
     const activeSection = useScrollSpy(nav_links.map(link => link.id));
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+            const currentScrollY = window.scrollY
+            const scrollDelta = currentScrollY - lastScrollY.current
+
+            setIsScrolled(currentScrollY > 50)
+
+            if (isMenuOpen) {
+                setIsNavVisible(true)
+            } else if (currentScrollY <= 50) {
+                setIsNavVisible(true)
+            } else if (scrollDelta > 8) {
+                setIsNavVisible(false)
+            } else if (scrollDelta < -8) {
+                setIsNavVisible(true)
+            }
+
+            lastScrollY.current = currentScrollY
         }
-        window.addEventListener('scroll', handleScroll)
+
+        lastScrollY.current = window.scrollY
+        window.addEventListener('scroll', handleScroll, { passive: true })
         return () => window.removeEventListener('scroll', handleScroll)
-    }, []);
+    }, [isMenuOpen]);
 
     const handleNavClick = (sectionid) => {
        scrollToSection(sectionid);
@@ -24,9 +44,11 @@ const Navbar = () => {
     };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-1000 py-4 transition-all duration-300 shadow-2xl ${isScrolled
-     ? 'bg-black/30 backdrop-blur-lg' : 'bg-transparent'}`}
-     style={{transform: 'translate3d(0, 0, 0)'}}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-1000 py-4 transition-all duration-300 shadow-2xl ${
+        isScrolled ? 'bg-black/30 backdrop-blur-lg' : 'bg-transparent'
+      } ${isNavVisible ? 'translate-y-0' : '-translate-y-full pointer-events-none'}`}
+    >
       <div className="max-w-330 mx-auto px-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -61,8 +83,9 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-2 ">
+          {/* Theme + CTA */}
+          <div className="hidden md:flex items-center gap-3 ">
+            <ThemeToggle />
             <button
               onClick={() => handleNavClick('contact')}
               className="cursor-pointer px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all"
@@ -86,6 +109,9 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="bg-black/95 backdrop-blur-lg flex flex-col gap-3 px-5 py-4">
+          <div className="pb-2 border-b border-white/10">
+            <ThemeToggle />
+          </div>
           {nav_links.map((link) => (
             <button
               key={link.id}

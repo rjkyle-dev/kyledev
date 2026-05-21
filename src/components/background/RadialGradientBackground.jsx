@@ -1,4 +1,12 @@
 
+const GRADIENT_STOPS = [
+    { color: 'var(--gradient-accent-25)', stop: '100%' },
+    { color: 'var(--gradient-accent-45)', stop: '100%' },
+    { color: 'var(--gradient-accent-50)', stop: '100%' },
+    { color: 'var(--gradient-accent-45)', stop: '100%' },
+    { color: 'var(--gradient-accent-25)', stop: '100%' },
+]
+
 const RadialGradientBackground = ({variant='hero', gradient=[]}) => {
 
    const variants = {
@@ -6,69 +14,21 @@ const RadialGradientBackground = ({variant='hero', gradient=[]}) => {
         {
             position: 'top-1 left-1 -translate-x-1/2 -translate-y-1/2',
             size: 'w-[1400px] h-[1400px]',
-            colors: [
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.5)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-            ],
+            colors: GRADIENT_STOPS,
             blur: '0px',
             opacity: 0.5,
         },
         {
             position: 'top-1 left-1',
             size: 'w-[1400px] h-[1400px]',
-            colors: [
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.5)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-            ],
+            colors: GRADIENT_STOPS,
             blur: '0px',
             opacity: 0.5,
         },
         {
               position: 'bottom-1 right-1',
             size: 'w-[1400px] h-[1400px]',
-            colors: [
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.5)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-            ],
+            colors: GRADIENT_STOPS,
             blur: '0px',
             opacity: 0.5,
         }
@@ -77,23 +37,7 @@ const RadialGradientBackground = ({variant='hero', gradient=[]}) => {
         {
                position: 'bottom-0 left-[75%]',
             size: 'w-[700px] h-[700px]',
-            colors: [
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.5)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.45)', stop: '100%'
-                },
-                {
-                    color: 'rgba(141, 255, 105, 0.25)', stop: '100%'
-                },
-            ],
+            colors: GRADIENT_STOPS,
             blur: '0px',
             opacity: 0.5,
         },

@@ -230,7 +230,7 @@ export const Card = ({ card, index, layout = false }) => {
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
             className={cn(
-              'mt-1 max-w-xs text-left font-semibold text-white transition-colors duration-300 group-hover:text-[#A8FF8D]',
+              'mt-1 max-w-xs text-left font-semibold text-white transition-colors duration-300 group-hover:text-primary',
               card.cardSize ? 'text-sm sm:text-base md:text-lg lg:text-xl' : 'text-sm md:text-lg',
             )}
           >

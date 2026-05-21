@@ -34,7 +34,7 @@ const ProjectCard = ({ project }) => {
 
             <div className='p-6 space-y-4'>
                 <div className=''>
-                    <h3 className='text-xl font-semibold text-white mb-2 group-hover:text-[#A8FF8D] transition-colors duration-300'>{title}</h3>
+                    <h3 className='text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300'>{title}</h3>
                     <p className='text-sm text-white/60 leading-relaxed line-clamp-2'>{description}</p>
                 </div>
                 <div className='flex flex-wrap gap-2'>
@@ -46,8 +46,8 @@ const ProjectCard = ({ project }) => {
 
                 {metrics && (
                     <div className='flex items-center gap-2 pt-3 border-t border-white/10'>
-                        <TrendingUp className='w-4 h-4 text-green-400' />
-                        <p className=' text-sm text-green-400 font-medium'>{metrics}</p>
+                        <TrendingUp className='w-4 h-4 text-primary' />
+                        <p className=' text-sm text-primary font-medium'>{metrics}</p>
                     </div>
                 )}
             </div>
