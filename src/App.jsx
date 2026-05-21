@@ -8,6 +8,7 @@ import Services from './components/sections/Services'
 import BackToTop from './components/ui/BackToTop'
 import ChatButton from './components/ui/ChatButton'
 import Testimonials from './components/sections/Testimonials'
+import Achievements from './components/sections/Achievements'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 
@@ -20,9 +21,10 @@ const App = () => {
         <Hero />
         <About />
         <Skills />
-        <Projects />
         <Services />
-        <Testimonials />
+        <Projects />
+        <Achievements />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
 

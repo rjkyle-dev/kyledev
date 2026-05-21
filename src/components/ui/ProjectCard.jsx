@@ -13,7 +13,7 @@ const ProjectCard = ({ project }) => {
 
             <div className='absolute bottom-4 right-4 flex items-center gap-3'>
                 {demoUrl && (
-                    <a href={demoUrl} target='_blank' rel='noopener noreferrer' className='p-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-110' title='View Demo'>
+                    <a href={demoUrl} target='_blank' rel='noopener noreferrer' className='p-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-110' title='View Project'>
                         <ExternalLink className='w-4 h-4 text-white/60' />
                     </a>
                 )}

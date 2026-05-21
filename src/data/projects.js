@@ -7,7 +7,7 @@ export const projects = [
         category: 'Full Stack',
         technologies: ['React', 'Node.js', 'CSS', 'Laravel', 'MySQL', 'Inertia.js', 'PHP', 'JavaScript', 'HTML5', 'Tailwind CSS','WebSockets','Axios','JWT','Vite','Gmail API','Csharp','.NET','HID Digital Persona UareU 4500'],
         metrics:'',
-        demoUrl: '',
+        demoUrl: 'https://checkwise-cfarbempco.com/',
         githubUrl: ''
     },
     {
@@ -18,7 +18,7 @@ export const projects = [
         category: 'Web Apps',
     technologies: ['HTML','CSS','SCSS','Vercel','JavaScript','Bootstrap','LESS'],
         metrics:'',
-        demoUrl: 'agriya-website.vercel.app/index.html',
+        demoUrl: 'https://agriya-website.vercel.app/',
         githubUrl: 'https://github.com/rjkyle-dev/Agriya-Website.git'
     },
     {
