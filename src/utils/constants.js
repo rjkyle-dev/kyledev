@@ -57,10 +57,10 @@ export const nav_links = [
         id: "projects",
         label: 'Projects'
     },
-    {
-        id: "testimonials",   
-        label: 'Testimonials'
-    },
+    // {
+    //     id: "testimonials",   
+    //     label: 'Testimonials'
+    // },
     {   
         id: "contact",
         label: 'Contact'
