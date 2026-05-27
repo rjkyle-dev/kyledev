@@ -5,6 +5,7 @@ import {about_stats, personal_info, stats} from '../../utils/constants'
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
 import RadianGradientBackground from '../background/RadialGradientBackground';
+import Lanyard from '../ui/Lanyard';
 
 const About = () => {
 
@@ -45,9 +46,9 @@ const About = () => {
                              <Sparkles className='w-4 h-4 text-primary' />
                           </div>
                         </FadeIn>
-
-                        <FadeIn delay={100}>
-                            <h2 className='text-4xl lg:text-5xl font-normal text-white leading-tight text-center lg:text-left'>
+                       
+                        <FadeIn delay={100} className='z-100'>
+                            <h2 className='text-4xl lg:text-5xl font-normal text-white leading-tight text-center lg:text-left z-100'>
                                 Crafting Digital Experiences That Matter
                             </h2>
                         </FadeIn>
@@ -77,12 +78,13 @@ const About = () => {
                                 )}
                             </div>
                         </FadeIn>
+                       
 
-                        <div className="hidden lg:block">
+                        <div className="hidden lg:block z-100">
                             <FadeIn delay={400}>
                                 <button
                                   onClick={() => window.open(personal_info.resume, '_blank')}
-                                  className='cursor-pointer inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group'
+                                  className='cursor-pointer inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full py-4 px-8 text-base font-medium transition-all duration-300 w-fit group z-100'
                                 >
                                  <Download className='cursor-pointer w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300'/>
                                  Download Resume
@@ -91,6 +93,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+               
 
                 <FadeIn delay={100}>
                     <div className="grid grid-cols-2 gap-4">
@@ -98,7 +101,7 @@ const About = () => {
                             <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300">
                             
                             </div>
-                               <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-opacity duration-300'>
+                               <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-opacity duration-300 z-100'>
                                   <div className='flex items-center gap-4'>
                                      <div className='p-3 bg-primary/10 rounded-xl'>
                                         <Code className='w-6 h-6 text-primary' />

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import FadeIn from '../animations/FadeIn'
-import {Mail, MapPin, Github, Linkedin, Twitter, Facebook, Instagram, Youtube, Send, MessageSquare} from 'lucide-react'
+import {Mail, MapPin, Send, MessageSquare} from 'lucide-react'
+import { SiGithub, SiLinkedin, SiX, SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 import {personal_info, social_links} from '../../utils/constants'
 
 const Contact = () => {
@@ -43,12 +44,12 @@ const Contact = () => {
     };
 
     const socialIcons = {
-        linkedin: Linkedin,
-        github: Github,
-        twitter: Twitter,
-        facebook: Facebook,
-        instagram: Instagram,
-        youtube: Youtube,
+        linkedin: SiLinkedin,
+        github: SiGithub,
+        twitter: SiX,
+        facebook: SiFacebook,
+        instagram: SiInstagram,
+        youtube: SiYoutube,
     }
 
     return (

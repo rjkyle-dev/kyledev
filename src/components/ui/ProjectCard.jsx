@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExternalLink, Github, TrendingUp } from 'lucide-react';
+import { ExternalLink, TrendingUp } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
 
 const ProjectCard = ({ project }) => {
 
@@ -19,7 +20,7 @@ const ProjectCard = ({ project }) => {
                 )}
                 {githubUrl && (
                     <a href={githubUrl} target='_blank' rel='noopener noreferrer' className='p-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-110' title='View GitHub'>
-                        <Github className='w-4 h-4 text-white/60' />
+                        <SiGithub className='w-4 h-4 text-white/60' />
                     </a>
                 )}
             </div>

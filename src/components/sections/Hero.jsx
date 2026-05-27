@@ -5,16 +5,20 @@ import {personal_info, stats} from '../../utils/constants'
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
 import RadianGradientBackground from '../background/RadialGradientBackground';
-
+import Lanyard from '../ui/Lanyard';
+import HeroIntro from '../ui/HeroIntro';
 
 const Hero = () => {
     return (
-        <section className='relative min-h-screen flex items-center overflow-hidden bg-black'>
+        <section className='relative min-h-screen flex flex-col overflow-hidden bg-black '>
             <RadianGradientBackground variant="hero" />
+            <HeroIntro name="KYLE" />
 
             <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+                    
                     <div className='text-left'>
+                  
                         <FadeIn delay={0}>
                             <div className='inline-flex items-center gap-2.5 px-4.5 py-2.75 mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full'>
                                 <MapPin className='w-4 h-4 text-white '/>
@@ -23,7 +27,7 @@ const Hero = () => {
                                 </span>
                             </div>
                         </FadeIn>
-
+ 
                         <FadeIn delay={100}>
                             <h1 className='text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight'>
                               Full-Stack | Software Developer
@@ -82,24 +86,24 @@ const Hero = () => {
 
                             <div className='absolute bottom-3 right-3 sm:bottom-6 sm:left-6 sm:right-auto z-20'>
                                 <FadeIn>
-                                    <div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-3 sm:px-6 sm:py-3 max-w-full'>
+                                    <div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-3 sm:px-6 sm:py-3 max-w-full '>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiReact className='w-full h-full text-primary' />
+                                            <SiReact className='w-full h-full text-white' />
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiNextdotjs className='w-full h-full text-primary'/>
+                                            <SiNextdotjs className='w-full h-full text-white'/>
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiTailwindcss className='w-full h-full text-primary' />                                        
+                                            <SiTailwindcss className='w-full h-full text-white' />                                        
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiDotnet className='w-full h-full text-primary' />
+                                            <SiDotnet className='w-full h-full text-white' />
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiLaravel className='w-full h-full text-primary' />
+                                            <SiLaravel className='w-full h-full text-white' />
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiPython className='w-full h-full text-primary' />
+                                            <SiPython className='w-full h-full text-white' />
                                         </div>
                                         {/* <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
                                             <SiLaragon className='w-full h-full text-primary' />
@@ -114,13 +118,13 @@ const Hero = () => {
                                             <SiBootstrap className='w-full h-full text-primary' />
                                         </div> */}
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiPhp className='w-full h-full text-primary' />
+                                            <SiPhp className='w-full h-full text-white' />
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiNodedotjs className='w-full h-full text-primary' />
+                                            <SiNodedotjs className='w-full h-full text-white' />
                                         </div>
                                         <div className='w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300 shrink-0'>
-                                            <SiMysql className='w-full h-full text-primary' />
+                                            <SiMysql className='w-full h-full text-white' />
                                         </div>
                                     </div>
                                 </FadeIn>

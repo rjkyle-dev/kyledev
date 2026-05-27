@@ -1,18 +1,19 @@
 import React from 'react'
 import FadeIn from '../animations/FadeIn'
-import {Code, Github, Linkedin, Twitter, Facebook, Instagram, Youtube, Heart} from 'lucide-react'
+import {Code, Heart} from 'lucide-react'
+import { SiGithub, SiLinkedin, SiX, SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 import {personal_info, social_links, nav_links} from '../../utils/constants'
 import {scrollToSection} from '../../hooks/useScrollSpy'
 
 const Footer = () => {
 
     const socialIcons = {
-        linkedin: Linkedin,
-        github: Github,
-        twitter: Twitter,
-        facebook: Facebook,
-        instagram: Instagram,
-        youtube: Youtube,
+        linkedin: SiLinkedin,
+        github: SiGithub,
+        twitter: SiX,
+        facebook: SiFacebook,
+        instagram: SiInstagram,
+        youtube: SiYoutube,
     }
 
     const currentYear = new Date().getFullYear();

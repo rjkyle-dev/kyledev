@@ -6,6 +6,7 @@ import FadeIn from '../animations/FadeIn'
 import RadianGradientBackground from '../background/RadialGradientBackground'
 import {Briefcase, Sparkles, Target, Globe, Palette, Zap, ChevronLeft, ChevronRight, Code, Smartphone, Database, Brain, Gamepad2 } from 'lucide-react'
 import ProjectCard from '../ui/ProjectCard'
+import {HeroParallax} from '../ui/hero-parallax'
 
 
 const Projects = () => {
@@ -15,6 +16,11 @@ const Projects = () => {
     const scrollContentRef = useRef(null)
 
     const filteredProjects = activeCategory === 'All' ? projects : projects.filter(project => project.category === activeCategory);
+    const parallaxProducts = projects.map((project) => ({
+        title: project.title || project.description || `Project ${project.id}`,
+        link: project.demoUrl || project.githubUrl || '#',
+        thumbnail: project.image,
+    }));
 
     const handleCategoryChange = (category) => {
         setActiveCategory(category);
@@ -60,14 +66,14 @@ const Projects = () => {
     };
 
     return <section id='projects' className='relative overflow-hidden py-20 bg-black'>
-         <div className='absolute inset-0 overflow-hidden'>
+         {/* <div className='absolute inset-0 overflow-hidden'>
             <div className='absolute top-1/3 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-20'></div>
             <div className='absolute bottom-1/3 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-20'></div>
             <div className='absolute top-1/2 right-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20 '></div>
-         </div>
+         </div> */}
 
          <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <FadeIn delay={0}>
+            {/* <FadeIn delay={0}>
                 <div className='text-center mb-12'>
                     <div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6'>
                         <Briefcase className='w-4 h-4 text-primary' />
@@ -78,9 +84,9 @@ const Projects = () => {
                     <h2 className='text-4xl lg:text-5xl font-normal text-white mb-4'>Featured Projects</h2>
                     <p className='text-lg text-white/60 max-w-2xl mx-auto'>Showcasing my best work and achievements.</p>
                 </div>
-            </FadeIn>
+            </FadeIn> */}
 
-            <FadeIn delay={100}>
+            {/* <FadeIn delay={100}>
                 <div className='flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 sm:mb-16 px-2'>
                     {categories.map((category) => (
                         <button key={category} onClick={() => handleCategoryChange(category)} className={`group relative px-4 py-2 sm:px-6 sm:py-3 font-medium rounded-full transition-all duration-300 ${activeCategory === category ? 'text-white' : 'text-white/60 hover:text-white'}`}>
@@ -97,11 +103,21 @@ const Projects = () => {
                         </button>
                     ))}
                 </div>
-            </FadeIn>
+            </FadeIn> */}
 
             <FadeIn delay={200}>
                 <div className='relative'>
-                    <div ref={scrollContentRef} className='overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar'>
+                <div ref={scrollContentRef} className='overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar'>
+                        <div className='flex gap-6 pb-4'>
+                           
+                                  <HeroParallax
+                                    products={parallaxProducts}
+                                  />
+                              
+                           
+                        </div>   
+                    </div>
+                    {/* <div ref={scrollContentRef} className='overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar'>
                         <div className='flex gap-6 pb-4'>
                             {filteredProjects.map((project, index) => (
                                 <div key={project.id} className='w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start shrink-0'>
@@ -109,9 +125,10 @@ const Projects = () => {
                                 </div>
                             ))}
                         </div>   
-                    </div>
+                    </div> */}
+                   
 
-                    {filteredProjects.length > 3 && (
+                    {/* {filteredProjects.length > 3 && (
                         <>
                             <button onClick={prevSlide} disabled={currentIndex === 0} aria-label='Previous Project' 
                             className='rounded-full flex absolute top-1/2 left-4 -translate-y-1/2 z-10 -translate-x-2 lg:-translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12  backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed' >
@@ -122,9 +139,9 @@ const Projects = () => {
                                 <ChevronRight className='w-4 h-4 text-white' />
                             </button>
                         </>
-                    )}
+                    )} */}
 
-                    {filteredProjects.length > 3 && (
+                    {/* {filteredProjects.length > 3 && (
                         <div className='flex items-center gap-2 justify-center mt-8'>
                             {Array.from({length: Math.max(0, filteredProjects.length -2)}).map((_, index) => (
                                 <button key={index} onClick={() => scrollToIndex(index)} aria-label={`Go to Project ${index + 1}`} 
@@ -133,7 +150,7 @@ const Projects = () => {
                             </button>
                         ))}
                     </div>
-                )}
+                )} */}
             </div>
         </FadeIn>
         </div>
