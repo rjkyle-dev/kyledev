@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
-import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "motion/react";
+import { X } from "lucide-react";
 
 
 
@@ -29,7 +31,9 @@ export const HeroParallax = ({
     <div
       ref={ref}
       className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
-      <Header projects={safeProducts} />
+      <div className="relative z-20">
+        <Header projects={safeProducts} />
+      </div>
       <motion.div
         style={{
           rotateX,
@@ -37,7 +41,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className="">
+        className="pointer-events-none relative z-10">
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
             <ProductCard product={product} translate={translateX} key={product.title} />
@@ -61,6 +65,13 @@ export const HeroParallax = ({
 export const Header = ({ projects = [] }) => {
   const safeProjects = Array.isArray(projects) ? projects : [];
   const preview = safeProjects.slice(0, 6);
+  const [viewingCert, setViewingCert] = useState(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const certificates = [
     {
       title: 'G-Cash Tree Planting Initiative',
@@ -83,9 +94,41 @@ export const Header = ({ projects = [] }) => {
       src: '/images/Certifications/dev-dep.jpg',
       alt: 'Azure Fundamentals certificate',
     },
+    {
+      title: 'Python Programming',
+      issuer: 'HackerRank Inc',
+      date: 'Oct 27 2025',
+      src: '/images/Certifications/cisco-py.png',
+      alt: 'Python Programming certificate by NETACAD Academy',
+    },
+    {
+      title: 'On the Job Training Certificate of Completion',
+      issuer: 'Public Information Unit DNSC Main',
+      date: 'May 2025',
+      src: '/images/Certifications/coc.jpg',
+      alt: 'On the Job Training Certificate of Completion',
+    },
   ];
 
+  useEffect(() => {
+    if (!viewingCert) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setViewingCert(null);
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [viewingCert]);
+
   return (
+    <>
     <div
       className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold text-white dark:text-white">
@@ -148,25 +191,81 @@ export const Header = ({ projects = [] }) => {
         <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {certificates.map((cert) => (
             <article key={`${cert.title}-${cert.issuer}`} className="group">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/20">
-                  <img
-                    src={cert.src}
-                    alt={cert.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  />
+              <button
+                type="button"
+                onClick={() => setViewingCert(cert)}
+                aria-label={`View ${cert.title} certificate`}
+                className="w-full cursor-pointer text-left"
+              >
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors group-hover:border-white/25 group-hover:bg-white/10">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/20">
+                    <img
+                      src={cert.src}
+                      alt={cert.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
-              </div>
-              <h3 className="mt-4 text-sm font-semibold text-white">{cert.title}</h3>
-              <p className="mt-1 text-xs text-white/60">{cert.issuer}</p>
-              <p className="mt-1 text-xs text-white/50">{cert.date}</p>
+                <h3 className="mt-4 text-sm font-semibold text-white group-hover:text-primary transition-colors">
+                  {cert.title}
+                </h3>
+                <p className="mt-1 text-xs text-white/60">{cert.issuer}</p>
+                <p className="mt-1 text-xs text-white/50">{cert.date}</p>
+              </button>
             </article>
           ))}
         </div>
       </div>
     </div>
+
+    {mounted &&
+      createPortal(
+        <AnimatePresence mode="wait">
+          {viewingCert && (
+            <motion.div
+              key={viewingCert.src}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[10000] flex min-h-screen w-screen items-center justify-center p-4 sm:p-8"
+            >
+              <button
+                type="button"
+                aria-label="Close certificate view"
+                onClick={() => setViewingCert(null)}
+                className="absolute inset-0 bg-black/90 backdrop-blur-md"
+              />
+              <button
+                type="button"
+                onClick={() => setViewingCert(null)}
+                aria-label="Close"
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors"
+              >
+                <X className="h-5 w-5 text-white" />
+              </button>
+              <div className="relative z-10 flex w-full max-w-4xl flex-col items-center justify-center gap-4">
+                <motion.img
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  src={viewingCert.src}
+                  alt={viewingCert.alt}
+                  className="mx-auto max-h-[70vh] w-auto max-w-full rounded-lg object-contain"
+                />
+                <div className="w-full text-center">
+                  <p className="text-sm font-semibold text-white sm:text-base">{viewingCert.title}</p>
+                  <p className="mt-1 text-xs text-white/60 sm:text-sm">{viewingCert.issuer}</p>
+                  <p className="mt-1 text-xs text-white/50">{viewingCert.date}</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
   );
 };
 
@@ -183,7 +282,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0">
+      className="group/product pointer-events-auto h-96 w-[30rem] relative shrink-0">
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}

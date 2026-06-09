@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProjectsPage from './pages/ProjectsPage'
+import SkillsPage from './pages/SkillsPage'
 import Footer from './components/layout/Footer'
 import BackToTop from './components/ui/BackToTop'
 import ChatButton from './components/ui/ChatButton'
@@ -25,6 +26,7 @@ const App = () => (
                 />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/skills" element={<SkillsPage />} />
             </Routes>
         </div>
     </BrowserRouter>
