@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 import BackToTop from './components/ui/BackToTop'
 import ChatButton from './components/ui/ChatButton'
 import CustomCursor from './components/ui/CustomCursor'
+import ServicePage from './pages/ServicePage'
 
 const App = () => (
     <BrowserRouter>
@@ -27,6 +28,7 @@ const App = () => (
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/skills" element={<SkillsPage />} />
+                <Route path="/services" element={<ServicePage />} />
             </Routes>
         </div>
     </BrowserRouter>

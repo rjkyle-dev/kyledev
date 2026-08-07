@@ -29,7 +29,7 @@ const thingsIDo = [
     'PERFORMANCE OPTIMIZATION',
 ]
 
-const AboutNew = () => {
+const ServicePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const navigate = useNavigate()
     const [time, setTime] = useState(() => formatTime(new Date()))
@@ -51,12 +51,12 @@ const AboutNew = () => {
     }
 
     const scrollToContent = () => {
-        const content = document.getElementById('about-content')
+        const content = document.getElementById('service-content')
         content?.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
-        <section id="about_new" className="relative bg-black">
+        <section id="service" className="relative bg-black">
             <div className="relative flex min-h-screen flex-col overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <ShapeGrid
@@ -78,13 +78,16 @@ const AboutNew = () => {
                     centerLabel="Back to home"
                 /> */}
                  <HeroTopBar
-                className="z-20"
-                time={time}
-                onCenterClick={() => setIsMenuOpen(true)}
-                onContactClick={() => scrollToSection('contact')}
-                centerLabel="Open menu"
-                isCenterActive={isMenuOpen}
+                 className="z-20"
+                 time={time}
+                 onCenterClick={() => setIsMenuOpen(true)}
+                 onContactClick={() => scrollToSection('contact')}
+                 centerLabel="Open menu"
+                 isCenterActive={isMenuOpen}
             >
+                {/* <div className="absolute z-30 w-full -top-10">
+                    <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} fov={15} transparent={true} />
+                </div> */}
             </HeroTopBar>
 
                 <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-8">
@@ -103,7 +106,7 @@ const AboutNew = () => {
                         transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="text-xs font-medium tracking-[0.35em] text-white uppercase sm:text-sm"
                     >
-                        About
+                        Services
                     </motion.p>
                 </div>
 
@@ -251,4 +254,4 @@ const AboutNew = () => {
     )
 }
 
-export default AboutNew
+export default ServicePage
